@@ -103,7 +103,7 @@ func HandleChoiceProduct(myStore *Store) (exit bool) {
 
 		fmt.Println(dividerBar)
 		fmt.Print("구매할 상품의 이름을 알려주세요 (나가기 exit): ")
-		fmt.Scanf("%s", &choice)
+		fmt.Scanln(&choice)
 
 		if choice == "exit" {
 			fmt.Println("이용해주셔서 감사합니다!")
@@ -124,7 +124,7 @@ func HandleChoiceProduct(myStore *Store) (exit bool) {
 
 		var quantity int
 		fmt.Print("몇 개를 구매하시겠어요?: ")
-		fmt.Scanf("%d", &quantity)
+		fmt.Scanln(&quantity)
 
 		isExists := myStore.CheckProductQuantity(
 			product.Item.Name,

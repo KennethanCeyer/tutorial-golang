@@ -6,7 +6,7 @@ import (
 	"book_api/database"
 	"book_api/models"
 	"github.com/stretchr/testify/assert"
-	"gorm.io/driver/sqlite"
+	"github.com/glebarez/sqlite"
 	"gorm.io/gorm"
 )
 
@@ -54,4 +54,3 @@ func TestGormBookRepository(t *testing.T) {
 	assert.NoError(t, err, "FetchBooks에서 에러가 발생하지 않아야 합니다.")
 	assert.Equal(t, 0, len(books), "책의 개수가 0이어야 합니다.")
 }
-

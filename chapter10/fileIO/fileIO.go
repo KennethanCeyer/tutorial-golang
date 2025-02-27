@@ -60,7 +60,7 @@ func main() {
 
 	if name == "" {
 		fmt.Print("혹시 성함이 어떻게 되시나요?: ")
-		fmt.Scanf("%s", &name)
+		fmt.Scanf("%s\n", &name)
 	}
 
 	if phone == "" {

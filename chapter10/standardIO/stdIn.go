@@ -10,7 +10,7 @@ func main() {
 
     // 사용자로부터 입력 받기
     fmt.Print("Enter your name: ")
-    fmt.Scan(&name)
+    fmt.Scanln(&name)
     
     fmt.Print("Enter your age: ")
     fmt.Scanf("%d", &age)
