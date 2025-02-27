@@ -62,7 +62,7 @@ require (
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 	gopkg.in/yaml.v2 v2.2.2 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	gorm.io/driver/sqlite v1.5.6 // indirect
+	github.com/glebarez/sqlite v1.5.6 // indirect
 	gorm.io/gorm v1.25.12 // indirect
 	nullprogram.com/x/optparse v1.0.0 // indirect
 	rsc.io/pdf v0.1.1 // indirect

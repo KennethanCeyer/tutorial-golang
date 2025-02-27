@@ -3,7 +3,7 @@ package database
 
 import (
     "book_api/models"
-    "gorm.io/driver/sqlite"
+    "github.com/glebarez/sqlite"
     "testing"
 )
 
@@ -36,4 +36,3 @@ func TestInitDBWithMemory(t *testing.T) {
         t.Errorf("저장된 데이터와 조회된 데이터가 일치하지 않습니다. (저장: %v, 조회: %v)", testBook.Title, retrievedBook.Title)
     }
 }
-

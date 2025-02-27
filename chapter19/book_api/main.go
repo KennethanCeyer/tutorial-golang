@@ -9,7 +9,7 @@ import (
     "log"
     "os"
 
-    "gorm.io/driver/sqlite"
+    "github.com/glebarez/sqlite"
     "github.com/gin-gonic/gin"
 )
 
@@ -52,4 +52,3 @@ func main() {
     // 서버 실행
     r.Run(":8080")
 }
-
