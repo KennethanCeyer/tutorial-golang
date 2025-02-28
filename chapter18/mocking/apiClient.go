@@ -1,10 +1,9 @@
 package main
 
-
 import (
-    "errors"
-    "net/http"
-    "io/ioutil"
+	"errors"
+	"io"
+	"net/http"
 )
 
 
@@ -29,10 +28,9 @@ func (c *RealAPIClient) FetchData(endpoint string) (string, error) {
     }
 
 
-    body, err := ioutil.ReadAll(resp.Body)
+    body, err := io.ReadAll(resp.Body)
     if err != nil {
         return "", err
     }
     return string(body), nil
 }
-
