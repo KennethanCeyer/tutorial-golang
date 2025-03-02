@@ -87,6 +87,7 @@ func TestDeleteBook(t *testing.T) {
 func TestGetBookByID_Success(t *testing.T) {
 	// 1. Mock 데이터 정의
 	mockBook := models.Book{Model: gorm.Model{ID: 1}, Title: "테스트 책", Author: "테스트 저자", Year: 2023}
+
 	// 2. Mock Repository와 Controller 초기화
 	mockRepo := &repositories.MockBookRepository{MockBooks: []models.Book{mockBook}}
 	controller := &BookController{Repository: mockRepo}
