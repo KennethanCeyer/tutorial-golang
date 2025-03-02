@@ -1,12 +1,10 @@
 package middlewares
 
-
 import (
 	"book_api/repositories"
+	"fmt"
 	"net/http"
 	"strconv"
-	"fmt"
-
 
 	"github.com/gin-gonic/gin"
 )
@@ -39,4 +37,3 @@ func BookLoader(repo repositories.BookRepository) gin.HandlerFunc {
 		c.Next()
 	}
 }
-

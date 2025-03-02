@@ -8,7 +8,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-
 type BookController struct {
 	Repository repositories.BookRepository
 }

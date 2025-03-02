@@ -61,27 +61,27 @@ func TestGetBooks(t *testing.T) {
 }
 
 func TestDeleteBook(t *testing.T) {
-    // 1. Mock 데이터 및 Repository 생성
-    mockBooks := []models.Book{
-        {Model: gorm.Model{ID: 1}, Title: "테스트 책", Author: "테스트 저자", Year: 2023},
-    }
-    mockRepo := &repositories.MockBookRepository{MockBooks: mockBooks}
-    bookController := &BookController{Repository: mockRepo}
+	// 1. Mock 데이터 및 Repository 생성
+	mockBooks := []models.Book{
+		{Model: gorm.Model{ID: 1}, Title: "테스트 책", Author: "테스트 저자", Year: 2023},
+	}
+	mockRepo := &repositories.MockBookRepository{MockBooks: mockBooks}
+	bookController := &BookController{Repository: mockRepo}
 
-    // 2. Mock Gin Context 생성
-    w := httptest.NewRecorder()
-    c, _ := gin.CreateTestContext(w)
+	// 2. Mock Gin Context 생성
+	w := httptest.NewRecorder()
+	c, _ := gin.CreateTestContext(w)
 
-    // 3. Mock Context에 필요한 데이터 설정
-    c.Set("book", mockBooks[0]) // BookLoader 미들웨어의 동작을 대신 수행
+	// 3. Mock Context에 필요한 데이터 설정
+	c.Set("book", mockBooks[0]) // BookLoader 미들웨어의 동작을 대신 수행
 
-    // 4. 핸들러 실행
-    bookController.DeleteBook(c)
+	// 4. 핸들러 실행
+	bookController.DeleteBook(c)
 
-    // 5. 결과 검증
-    assert.Equal(t, http.StatusOK, w.Code)
-    assert.Contains(t, w.Body.String(), "삭제되었습니다")
-    assert.Equal(t, 0, len(mockRepo.MockBooks)) // MockBooks 리스트가 비었는지 확인
+	// 5. 결과 검증
+	assert.Equal(t, http.StatusOK, w.Code)
+	assert.Contains(t, w.Body.String(), "삭제되었습니다")
+	assert.Equal(t, 0, len(mockRepo.MockBooks)) // MockBooks 리스트가 비었는지 확인
 }
 
 func TestGetBookByID_Success(t *testing.T) {
