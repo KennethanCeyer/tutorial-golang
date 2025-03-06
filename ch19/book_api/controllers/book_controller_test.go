@@ -36,7 +36,8 @@ func TestGetBooks(t *testing.T) {
 	mockRepo := &repositories.MockBookRepository{MockBooks: mockBooks}
 	controller := &BookController{Repository: mockRepo}
 
-	// 3. Gin Context Mocking
+	// 3. Mock Gin Context 생성
+	gin.SetMode(gin.TestMode)
 	w := httptest.NewRecorder()
 	c, _ := gin.CreateTestContext(w)
 
@@ -46,7 +47,7 @@ func TestGetBooks(t *testing.T) {
 	// 5. 결과 검증
 	assert.Equal(t, http.StatusOK, w.Code)
 
-	// 응답 데이터 비교
+	// 6. 응답 데이터 비교
 	var response []models.Book
 	err := json.Unmarshal(w.Body.Bytes(), &response)
 	assert.NoError(t, err)
@@ -69,6 +70,7 @@ func TestDeleteBook(t *testing.T) {
 	bookController := &BookController{Repository: mockRepo}
 
 	// 2. Mock Gin Context 생성
+	gin.SetMode(gin.TestMode)
 	w := httptest.NewRecorder()
 	c, _ := gin.CreateTestContext(w)
 
@@ -141,7 +143,7 @@ func TestGetBookByID_InvalidType(t *testing.T) {
 }
 
 func TestCreateBook(t *testing.T) {
-	// 1. Mock Repository와 Controller 초기화 (빈 데이터)
+	// 1. Mock Repository와 Controller 초기화
 	mockRepo := &repositories.MockBookRepository{MockBooks: []models.Book{}}
 	controller := &BookController{Repository: mockRepo}
 
@@ -181,7 +183,7 @@ func TestUpdateBook(t *testing.T) {
 	jsonData, err := json.Marshal(updatedPayload)
 	assert.NoError(t, err)
 
-	// 3. Gin Context 생성, PUT 요청 설정 및 'book' 데이터 설정 (BookLoader 역할 대체)
+	// 3. Gin Context 생성, PUT 요청 설정 및 'book' 데이터 설정
 	w := httptest.NewRecorder()
 	c, _ := gin.CreateTestContext(w)
 	c.Request = httptest.NewRequest("PUT", "/books/1", bytes.NewBuffer(jsonData))

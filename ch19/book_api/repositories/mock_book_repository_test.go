@@ -1,6 +1,7 @@
 package repositories
 
 import (
+	"errors"
 	"testing"
 
 	"book_api/models"
@@ -46,4 +47,28 @@ func TestMockBookRepository(t *testing.T) {
 	err = repo.DeleteBook(1)
 	assert.NoError(t, err, "DeleteBook에서 에러가 발생하지 않아야 합니다.")
 	assert.Equal(t, 2, len(repo.MockBooks), "MockBooks의 길이가 2여야 합니다.")
+
+	// 8. MockErr 동작 테스트
+	expectedErr := errors.New("mock error")
+	repo.MockErr = expectedErr
+
+	// 9. FetchBooks 에러 발생 확인
+	_, err = repo.FetchBooks()
+	assert.EqualError(t, err, expectedErr.Error(), "FetchBooks에서 MockErr가 발생해야 합니다.")
+
+	// 10. FetchBookByID 에러 발생 확인
+	_, err = repo.FetchBookByID(2)
+	assert.EqualError(t, err, expectedErr.Error(), "FetchBookByID에서 MockErr가 발생해야 합니다.")
+
+	// 11. CreateBook 에러 발생 확인
+	err = repo.CreateBook(models.Book{Model: gorm.Model{ID: 4}, Title: "에러 책", Author: "에러 저자", Year: 2025})
+	assert.EqualError(t, err, expectedErr.Error(), "CreateBook에서 MockErr가 발생해야 합니다.")
+
+	// 12. UpdateBook 에러 발생 확인
+	err = repo.UpdateBook(models.Book{Model: gorm.Model{ID: 2}, Title: "에러 수정", Author: "에러 저자", Year: 2026})
+	assert.EqualError(t, err, expectedErr.Error(), "UpdateBook에서 MockErr가 발생해야 합니다.")
+
+	// 13. DeleteBook 에러 발생 확인
+	err = repo.DeleteBook(2)
+	assert.EqualError(t, err, expectedErr.Error(), "DeleteBook에서 MockErr가 발생해야 합니다.")
 }

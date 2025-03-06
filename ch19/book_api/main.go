@@ -37,10 +37,11 @@ func main() {
 
 	// 의존성 주입
 	repo := &repositories.GormBookRepository{DB: db}
+	webController := &controllers.WebController{Repository: repo}
 	bookController := &controllers.BookController{Repository: repo}
 
 	// 라우트 설정
-	routes.SetupRoutes(r, bookController)
+	routes.SetupRoutes(r, webController, bookController)
 
 	// 서버 실행
 	r.Run(":8080")

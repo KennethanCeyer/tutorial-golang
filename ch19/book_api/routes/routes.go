@@ -7,11 +7,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func SetupRoutes(r *gin.Engine, bookController *controllers.BookController) {
+func SetupRoutes(
+	r *gin.Engine,
+	webController *controllers.WebController,
+	bookController *controllers.BookController,
+) {
 	r.LoadHTMLGlob("templates/*") // HTML 템플릿 로드
 
 	// 기본 웹 페이지 라우트
-	r.GET("/", bookController.ShowIndexPage)
+	r.GET("/", webController.ShowIndexPage)
 
 	// API 라우트 그룹
 	api := r.Group("/api")

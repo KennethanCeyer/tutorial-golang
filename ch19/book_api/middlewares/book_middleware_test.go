@@ -19,6 +19,7 @@ func TestBookLoader(t *testing.T) {
 	}
 	mockRepo := &repositories.MockBookRepository{MockBooks: mockBooks}
 
+	gin.SetMode(gin.TestMode)
 	r := gin.Default()
 	r.GET("/books/:id", BookLoader(mockRepo), func(c *gin.Context) {
 		book, exists := c.Get("book")
@@ -41,6 +42,7 @@ func TestBookLoader(t *testing.T) {
 // 잘못된 ID 케이스: 숫자가 아닌 id를 전달하면 400 Bad Request가 반환되어야 한다.
 func TestBookLoader_InvalidID(t *testing.T) {
 	mockRepo := &repositories.MockBookRepository{}
+	gin.SetMode(gin.TestMode)
 	r := gin.Default()
 	r.GET("/books/:id", BookLoader(mockRepo), func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"message": "should not reach"})
@@ -58,6 +60,7 @@ func TestBookLoader_InvalidID(t *testing.T) {
 func TestBookLoader_NotFound(t *testing.T) {
 	// 빈 MockBookRepository 사용: id=1인 책이 없음.
 	mockRepo := &repositories.MockBookRepository{MockBooks: []models.Book{}}
+	gin.SetMode(gin.TestMode)
 	r := gin.Default()
 	r.GET("/books/:id", BookLoader(mockRepo), func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"message": "should not reach"})

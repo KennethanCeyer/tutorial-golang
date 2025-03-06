@@ -12,15 +12,6 @@ type BookController struct {
 	Repository repositories.BookRepository
 }
 
-func (bc *BookController) ShowIndexPage(c *gin.Context) {
-	books, err := bc.Repository.FetchBooks()
-	if err != nil {
-		c.HTML(http.StatusInternalServerError, "error.html", gin.H{"error": "데이터를 불러올 수 없습니다."})
-		return
-	}
-	c.HTML(http.StatusOK, "index.html", gin.H{"Books": books})
-}
-
 func (bc *BookController) GetBooks(c *gin.Context) {
 	books, err := bc.Repository.FetchBooks()
 	if err != nil {
