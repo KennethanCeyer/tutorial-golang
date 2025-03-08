@@ -1,3 +1,3 @@
-module ch3
+module ch03
 
 go 1.24.1
