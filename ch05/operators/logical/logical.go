@@ -11,7 +11,6 @@ func main() {
 	fmt.Printf("%v\t=\tfalse && false\n", false && false)
 	fmt.Println("========")
 
-
 	fmt.Println("OR operator")
 	fmt.Println("========")
 	fmt.Printf("%v\t=\ttrue || true\n", true || true)
@@ -19,7 +18,6 @@ func main() {
 	fmt.Printf("%v\t=\tfalse || true\n", false || true)
 	fmt.Printf("%v\t=\tfalse || false\n", false || false)
 	fmt.Println("========")
-
 
 	fmt.Println("NOT operator")
 	fmt.Println("========")

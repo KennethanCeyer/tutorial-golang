@@ -6,7 +6,6 @@ import "fmt"
 
 // main 함수
 func main() {
-    // 출력
-    fmt.Println("Hello World!")
+	// 출력
+	fmt.Println("Hello World!")
 }
-
