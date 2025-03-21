@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 )
 
@@ -16,7 +16,7 @@ func main() {
 	defer resp.Body.Close()
 
 	// 응답 본문 읽기
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		fmt.Println("응답 읽기 실패:", err)
 		return

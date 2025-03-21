@@ -1,4 +1,4 @@
-package chapter20
+package godoc_ex
 
 // Add는 두 정수를 더한 값을 반환한다.
 func Add(a int, b int) int {

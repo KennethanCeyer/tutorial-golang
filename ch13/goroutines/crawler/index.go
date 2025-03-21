@@ -1,7 +1,7 @@
 package main
 
 import (
-	"io/ioutil"
+	"io"
 	"net/http"
 )
 
@@ -33,7 +33,7 @@ func Indexing() (newsIndex NewsIndex, err error) {
 			return NewsIndex{}, err
 		}
 		defer resp.Body.Close()
-		body, err := ioutil.ReadAll(resp.Body)
+		body, err := io.ReadAll(resp.Body)
 		titleUrlPair := ParseIndex(body)
 		for _, pair := range titleUrlPair {
 			index.Link = append(index.Link, NewsLink{
