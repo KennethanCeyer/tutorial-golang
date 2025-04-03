@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 // 바깥 함수
-func GetIncreaser() func() {
+func getIncreaser() func() {
 	value := 100
 
 	// 안쪽 함수
@@ -15,7 +15,7 @@ func GetIncreaser() func() {
 }
 
 func main() {
-	increaser := GetIncreaser()
+	increaser := getIncreaser()
 	for i := 0; i < 5; i++ {
 		increaser()
 	}
