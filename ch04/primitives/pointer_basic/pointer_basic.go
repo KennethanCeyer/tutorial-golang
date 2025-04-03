@@ -12,7 +12,7 @@ func main() {
 	// ptr에 val 변수의 주소 할당
 	ptr = &val
 
-	// ptr이 가리키는 주소의 값 출력 (역참조)
+	// ptr이 가리키는 실제 값 출력 (역참조)
 	fmt.Printf("ptr이 가리키는 값: %d\n", *ptr)
 
 	// ptr이 가리키는 주소에 새로운 값 할당
