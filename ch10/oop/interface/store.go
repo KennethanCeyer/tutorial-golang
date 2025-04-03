@@ -168,7 +168,7 @@ func main() {
 	// 쥬스 종류를 정의
 	orangeJuice := NewJuice(
 		"오렌지 쥬스", 3000, "과일 쥬스", Sweet, Waiting)
-	AloeJuice := NewJuice(
+	aloeJuice := NewJuice(
 		"알로에 쥬스", 3000, "건강 쥬스", FruitFlavor, Waiting)
 
 	// 차 종류를 정의
@@ -184,7 +184,7 @@ func main() {
 	productDripCoffee := NewProduct(dripCoffee, 4)
 	productDutchCoffee := NewProduct(dutchCoffee, 6)
 	productOrangeJuice := NewProduct(orangeJuice, 8)
-	productAloeJuice := NewProduct(AloeJuice, 3)
+	productAloeJuice := NewProduct(aloeJuice, 3)
 	productMilk := NewProduct(milk, 3)
 	productHotChoco := NewProduct(hotChoco, 5)
 
