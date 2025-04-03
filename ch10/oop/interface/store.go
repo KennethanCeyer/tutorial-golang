@@ -160,7 +160,7 @@ func main() {
 		"카페라떼", 3500, "블랜딩 커피", Sweet, Waiting)
 	cateMocha := NewCoffee(
 		"카페모카", 4000, "디저트 커피", Sweet, Waiting)
-	dripCoffe := NewCoffee(
+	dripCoffee := NewCoffee(
 		"드립커피", 7000, "원두 커피", FruitFlavor, Waiting)
 	dutchCoffee := NewCoffee(
 		"더치커피", 5000, "더치 커피", Bitter, Waiting)
@@ -181,7 +181,7 @@ func main() {
 	productAmericano := NewProduct(americano, 5)
 	productLatte := NewProduct(latte, 2)
 	productCateMocha := NewProduct(cateMocha, 3)
-	productDripCoffee := NewProduct(dripCoffe, 4)
+	productDripCoffee := NewProduct(dripCoffee, 4)
 	productDuchCoffee := NewProduct(dutchCoffee, 6)
 	productOrangeJuice := NewProduct(orangeJuice, 8)
 	productAloeJuice := NewProduct(AloeJuice, 3)
