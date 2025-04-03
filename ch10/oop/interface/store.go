@@ -182,7 +182,7 @@ func main() {
 	productLatte := NewProduct(latte, 2)
 	productCateMocha := NewProduct(cateMocha, 3)
 	productDripCoffee := NewProduct(dripCoffee, 4)
-	productDuchCoffee := NewProduct(dutchCoffee, 6)
+	productDutchCoffee := NewProduct(dutchCoffee, 6)
 	productOrangeJuice := NewProduct(orangeJuice, 8)
 	productAloeJuice := NewProduct(AloeJuice, 3)
 	productMilk := NewProduct(milk, 3)
@@ -196,7 +196,7 @@ func main() {
 		productLatte,
 		productCateMocha,
 		productDripCoffee,
-		productDuchCoffee,
+		productDutchCoffee,
 		productOrangeJuice,
 		productAloeJuice,
 		productMilk,

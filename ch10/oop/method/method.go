@@ -155,7 +155,7 @@ func main() {
 	productLatte := NewProduct(latte, 2)
 	productCateMocha := NewProduct(cateMocha, 3)
 	productDripCoffee := NewProduct(dripCoffee, 4)
-	productDuchCoffee := NewProduct(dutchCoffee, 6)
+	productDutchCoffee := NewProduct(dutchCoffee, 6)
 
 	// 제품을 판매할 상점을 Store 객체로 생성
 	// 처음 자금은 0원
@@ -165,7 +165,7 @@ func main() {
 		productLatte,
 		productCateMocha,
 		productDripCoffee,
-		productDuchCoffee})
+		productDutchCoffee})
 	fmt.Printf("store: %v\n", myStore)
 
 	for {
