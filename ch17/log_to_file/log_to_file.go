@@ -10,6 +10,8 @@ func main() {
 	if err != nil {
 		log.Fatal("파일을 열 수 없습니다: ", err)
 	}
+	defer file.Close()
+
 	log.SetOutput(file)
 	log.Println("파일에 로그를 기록합니다.")
 }
