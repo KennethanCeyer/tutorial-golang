@@ -6,9 +6,7 @@ import (
 	"time"
 )
 
-
 const divideBar = "================================================"
-
 
 func main() {
 	var confirm string
@@ -16,22 +14,18 @@ func main() {
 	fmt.Print("고루틴을 사용하시겠습니까? (y/N): ")
 	fmt.Scanf("%s", &confirm)
 
-
 	if strings.ToUpper(confirm) == "Y" {
 		useGoroutine = true
 	}
-
 
 	index, err := Indexing()
 	if err != nil {
 		panic(err)
 	}
 
-
 	fmt.Println(divideBar)
 	fmt.Printf("총 %d건의 뉴스 기사를 찾았습니다.\n", len(index.Link))
 	fmt.Println("뉴스 내용을 불러옵니다.")
-
 
 	start := time.Now()
 	err = Crawler(index, useGoroutine)

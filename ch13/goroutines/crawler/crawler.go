@@ -6,11 +6,9 @@ import (
 	"sync"
 )
 
-
 const UserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6)" +
 	" AppleWebKit/537.36 (KHTML, like Gecko)" +
 	" Chrome/79.0.3945.130 Safari/537.36"
-
 
 func Crawler(index NewsIndex, useGoroutine bool) error {
 	var wg sync.WaitGroup
@@ -28,7 +26,6 @@ func Crawler(index NewsIndex, useGoroutine bool) error {
 	wg.Wait()
 	return nil
 }
-
 
 func GetContent(
 	url string, link *NewsLink, wg *sync.WaitGroup) error {

@@ -12,8 +12,9 @@ var (
 
 func increment() {
 	mu.Lock()
+	defer mu.Unlock() // Lock 직후 Unlock을 defer로 호출
 	count++
-	mu.Unlock()
+	// 만약 여기서 panic이 발생해도 17행에서 defer된 Unlock은 실행됨
 }
 
 func main() {
