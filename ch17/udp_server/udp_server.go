@@ -30,7 +30,7 @@ func main() {
 			continue
 		}
 		message := string(buffer[:n])
-		fmt.Printf("수신한 메시지: %s", message)
+		fmt.Printf("수신한 메시지: %s\n", message)
 		// 클라이언트에게 응답 전송
 		_, err = conn.WriteToUDP([]byte("서버 응답: "+message), clientAddr)
 		if err != nil {
