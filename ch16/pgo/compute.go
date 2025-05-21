@@ -7,7 +7,7 @@ import (
 )
 
 // 연산이 요구되는 무거운 작업
-func compute(data []int) int {
+func Compute(data []int) int {
 	result := 0
 	for _, value := range data {
 		if value%2 == 0 {
@@ -28,7 +28,7 @@ func main() {
 	sort.Ints(data)
 
 	start := time.Now()
-	result := compute(data)
+	result := Compute(data)
 	elapsed := time.Since(start)
 
 	fmt.Printf("결과: %d\n", result)
