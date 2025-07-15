@@ -64,7 +64,7 @@ func main() {
 
 	if phone == "" {
 		fmt.Printf("연락처는 어떻게 되세요?: ")
-		fmt.Scanf("%s", &phone)
+		fmt.Scanf("%s\n", &phone)
 	}
 
 	fmt.Println("================================================")

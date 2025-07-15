@@ -11,7 +11,7 @@ func main() {
 	for i := 0; i < 5; i++ {
 		var name string
 		fmt.Printf("%d번째 사람의 이름을 입력해주세요: ", i+1)
-		fmt.Scanf("%s", &name)
+		fmt.Scanf("%s\n", &name)
 		switch i {
 		case 0:
 			name1 = name

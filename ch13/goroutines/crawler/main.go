@@ -12,7 +12,7 @@ func main() {
 	var confirm string
 	useGoroutine := false
 	fmt.Print("고루틴을 사용하시겠습니까? (y/N): ")
-	fmt.Scanf("%s", &confirm)
+	fmt.Scanf("%s\n", &confirm)
 
 	if strings.ToUpper(confirm) == "Y" {
 		useGoroutine = true

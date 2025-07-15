@@ -8,7 +8,7 @@ func main() {
 	// 사용자로 부터 5 과목의 점수 입력
 	for i := 0; i < len(score); i++ {
 		fmt.Printf("%d번째 과목 점수를 입력하세요: ", i+1)
-		fmt.Scanf("%d", &score[i])
+		fmt.Scanf("%d\n", &score[i])
 	}
 	fmt.Println("============================")
 

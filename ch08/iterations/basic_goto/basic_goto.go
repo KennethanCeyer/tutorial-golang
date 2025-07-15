@@ -7,20 +7,20 @@ func main() {
 
 askYesOrNo:
 	fmt.Print("혹시 관심 있는 연예인이나 가수가 있나요? (네/아니요): ")
-	fmt.Scanf("%s", &answer)
+	fmt.Scanf("%s\n", &answer)
 
 	if answer == "아니요" {
 		goto askProgramExit
 	}
 
 	fmt.Print("이름이 무엇인가요?: ")
-	fmt.Scanf("%s", &name)
+	fmt.Scanf("%s\n", &name)
 
 askProgramExit:
 	if name == "" || name == "아니요" {
 		var programExitAnswer string
 		fmt.Print("그러면 프로그램을 끝낼까요? (네/아니요): ")
-		fmt.Scanf("%s", &programExitAnswer)
+		fmt.Scanf("%s\n", &programExitAnswer)
 
 		if programExitAnswer == "네" {
 			goto exit

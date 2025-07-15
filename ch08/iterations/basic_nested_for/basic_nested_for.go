@@ -31,7 +31,7 @@ func main() {
 	fmt.Print("(0: 프로그램 종료): ")
 
 	// 사용자로부터 정수를 입력받음
-	fmt.Scanf("%d", &tableStartIndex)
+	fmt.Scanf("%d\n", &tableStartIndex)
 
 	// 입력받은 정수가 0일경우 프로그램 종료
 	if tableStartIndex == 0 {

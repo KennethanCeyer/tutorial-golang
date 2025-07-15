@@ -10,7 +10,7 @@ func main() {
 
 	for i := 0; i < 5; i++ {
 		fmt.Printf("%d번째 사람의 이름을 입력해주세요: ", i+1)
-		fmt.Scanf("%s", &nameArray[i])
+		fmt.Scanf("%s\n", &nameArray[i])
 	}
 
 	randomNumber := rand.Intn(len(nameArray))

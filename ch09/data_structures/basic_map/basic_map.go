@@ -26,10 +26,10 @@ func main() {
 		var subjectScore int
 
 		fmt.Print("과목 이름을 입력해주세요: ")
-		fmt.Scanf("%s", &subjectName)
+		fmt.Scanf("%s\n", &subjectName)
 
 		fmt.Printf("%s의 점수를 입력해주세요: ", subjectName)
-		fmt.Scanf("%d", &subjectScore)
+		fmt.Scanf("%d\n", &subjectScore)
 
 		mapScore[subjectName] = subjectScore
 	}

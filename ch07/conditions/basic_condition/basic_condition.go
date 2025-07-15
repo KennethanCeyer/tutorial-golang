@@ -18,7 +18,7 @@ func main() {
 	var score int
 
 	fmt.Print("점수를 입력해주세요: ")
-	fmt.Scanf("%d", &score)
+	fmt.Scanf("%d\n", &score)
 
 	rank := getScoreRank(score)
 	fmt.Printf("당신의 점수 등급은 '%v' 입니다.\n", rank)

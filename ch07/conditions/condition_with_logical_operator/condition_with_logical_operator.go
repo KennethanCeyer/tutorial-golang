@@ -29,10 +29,10 @@ func main() {
 	var word, language string
 
 	fmt.Print("찾고 싶은 단어를 입력해주세요 (apple, banana, grape): ")
-	fmt.Scanf("%s", &word)
+	fmt.Scanf("%s\n", &word)
 
 	fmt.Print("변환할 언어를 입력해주세요 (지원되는 언어: ko, jp, en): ")
-	fmt.Scanf("%s", &language)
+	fmt.Scanf("%s\n", &language)
 
 	translatedWord := getTranslatedWord(word, language)
 	fmt.Print("\n")

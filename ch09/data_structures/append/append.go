@@ -13,7 +13,7 @@ func main() {
 
 	var itemNumber int
 	fmt.Print("배열에 요소 몇개를 더 할까요?: ")
-	fmt.Scanf("%d", &itemNumber)
+	fmt.Scanf("%d\n", &itemNumber)
 
 	for i := 0; i < itemNumber; i++ {
 		// append 함수를 이용해서 슬라이스에 요소 추가

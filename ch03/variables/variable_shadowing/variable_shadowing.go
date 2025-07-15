@@ -14,7 +14,7 @@ func display() {
 	// 전역변수와 동일한 이름으로 정의되었다
 	var name string
 	fmt.Print("혹시 이름을 알려주실 수 있으신가요?: ")
-	fmt.Scanf("%s", &name)
+	fmt.Scanf("%s\n", &name)
 
 	// display 함수에서 name 변수 이름에 접근하여 값 출력
 	fmt.Println("================================================")

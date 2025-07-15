@@ -21,7 +21,7 @@ func main() {
 	var searchWord string
 
 	fmt.Print("찾고 싶은 단어를 입력해주세요 (apple, banana, grape): ")
-	fmt.Scanf("%s", &searchWord)
+	fmt.Scanf("%s\n", &searchWord)
 
 	fmt.Print("\n")
 	korWord := getKoreanWord(searchWord)

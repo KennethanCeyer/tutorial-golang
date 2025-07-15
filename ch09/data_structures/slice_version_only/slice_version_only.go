@@ -11,7 +11,10 @@ func main() {
 
 	for i := 0; name != "exit"; i++ {
 		fmt.Printf("%d번째 사람의 이름을 입력해주세요: ", i+1)
-		fmt.Scanf("%s", &name)
+		fmt.Scanf("%s\n", &name)
+		if name == "exit" {
+			break
+		}
 		nameSlice = append(nameSlice, name)
 	}
 
