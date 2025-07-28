@@ -158,7 +158,7 @@ func main() {
 		"아메리카노", 3000, "블랜딩 커피", Bitter, Waiting)
 	latte := NewCoffee(
 		"카페라떼", 3500, "블랜딩 커피", Sweet, Waiting)
-	cateMocha := NewCoffee(
+	cafeMocha := NewCoffee(
 		"카페모카", 4000, "디저트 커피", Sweet, Waiting)
 	dripCoffee := NewCoffee(
 		"드립커피", 7000, "원두 커피", FruitFlavor, Waiting)
@@ -180,7 +180,7 @@ func main() {
 	// 판매할 상품 수량을 Product 객체로 생성
 	productAmericano := NewProduct(americano, 5)
 	productLatte := NewProduct(latte, 2)
-	productCateMocha := NewProduct(cateMocha, 3)
+	productCafeMocha := NewProduct(cafeMocha, 3)
 	productDripCoffee := NewProduct(dripCoffee, 4)
 	productDutchCoffee := NewProduct(dutchCoffee, 6)
 	productOrangeJuice := NewProduct(orangeJuice, 8)
@@ -194,7 +194,7 @@ func main() {
 	myStore := NewStore(0, []*Product{
 		productAmericano,
 		productLatte,
-		productCateMocha,
+		productCafeMocha,
 		productDripCoffee,
 		productDutchCoffee,
 		productOrangeJuice,

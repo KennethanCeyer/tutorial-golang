@@ -34,13 +34,13 @@ func NewCoffee(
 func main() {
 	americano := NewCoffee("아메리카노", 3000, "블랜딩 커피", Bitter)
 	latte := NewCoffee("카페라떼", 3500, "블랜딩 커피", Sweet)
-	cateMocha := NewCoffee("카페모카", 4000, "디저트 커피", Sweet)
+	cafeMocha := NewCoffee("카페모카", 4000, "디저트 커피", Sweet)
 	dripCoffee := NewCoffee("드립커피", 7000, "원두 커피", FruitFlavor)
 	dutchCoffee := NewCoffee("더치커피", 5000, "더치 커피", Bitter)
 
 	fmt.Printf("americano: %v\n", americano)
 	fmt.Printf("latte: %v\n", latte)
-	fmt.Printf("cateMocha: %v\n", cateMocha)
+	fmt.Printf("cafeMocha: %v\n", cafeMocha)
 	fmt.Printf("dripCoffee: %v\n", dripCoffee)
 	fmt.Printf("dutchCoffee: %v\n", dutchCoffee)
 }
