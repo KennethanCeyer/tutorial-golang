@@ -25,41 +25,41 @@ func NewJuice(
 	return juice
 }
 
-// 쥬스를 만듦
+// 주스를 만듦
 func (j *Juice) Make() error {
 	if j.State == MakeDone {
-		return fmt.Errorf("%s 쥬스는 이미 만들어져 있습니다.", j.Name)
+		return fmt.Errorf("%s 주스는 이미 만들어져 있습니다.", j.Name)
 	} else if j.State == Done {
 		return fmt.Errorf(
-			"%s 쥬스는 이미 만들어져 고객에게 서빙되었습니다.", j.Name)
+			"%s 주스는 이미 만들어져 고객에게 서빙되었습니다.", j.Name)
 	}
 	j.State = MakeDone
 	return nil
 }
 
-// 쥬스를 포장함
+// 주스를 포장함
 func (j *Juice) Package() error {
 	if j.State == Waiting {
-		return fmt.Errorf("%s 쥬스는 아직 준비되지 않았습니다.", j.Name)
+		return fmt.Errorf("%s 주스는 아직 준비되지 않았습니다.", j.Name)
 	} else if j.State == PackageDone {
-		return fmt.Errorf("%s 쥬스는 이미 포장이 완료되었습니다.", j.Name)
+		return fmt.Errorf("%s 주스는 이미 포장이 완료되었습니다.", j.Name)
 	} else if j.State == Done {
 		return fmt.Errorf(
-			"%s 쥬스는 이미 고객에게 서빙되었습니다.", j.Name)
+			"%s 주스는 이미 고객에게 서빙되었습니다.", j.Name)
 	}
 	j.State = PackageDone
 	return nil
 }
 
-// 쥬스를 서빙함
+// 주스를 서빙함
 func (j *Juice) Pick() error {
 	if j.State == Waiting {
-		return fmt.Errorf("%s 쥬스는 아직 준비되지 않았습니다.", j.Name)
+		return fmt.Errorf("%s 주스는 아직 준비되지 않았습니다.", j.Name)
 	} else if j.State == MakeDone {
-		return fmt.Errorf("%s 쥬스는 아직 포장되지 않았습니다.", j.Name)
+		return fmt.Errorf("%s 주스는 아직 포장되지 않았습니다.", j.Name)
 	} else if j.State == Done {
 		return fmt.Errorf(
-			"%s 쥬스는 이미 고객에게 서빙되었습니다.", j.Name)
+			"%s 주스는 이미 고객에게 서빙되었습니다.", j.Name)
 	}
 	j.State = Done
 	return nil

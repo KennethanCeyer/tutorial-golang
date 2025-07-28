@@ -165,11 +165,11 @@ func main() {
 	dutchCoffee := NewCoffee(
 		"더치커피", 5000, "더치 커피", Bitter, Waiting)
 
-	// 쥬스 종류를 정의
+	// 주스 종류를 정의
 	orangeJuice := NewJuice(
-		"오렌지 쥬스", 3000, "과일 쥬스", Sweet, Waiting)
+		"오렌지 주스", 3000, "과일 주스", Sweet, Waiting)
 	aloeJuice := NewJuice(
-		"알로에 쥬스", 3000, "건강 쥬스", FruitFlavor, Waiting)
+		"알로에 주스", 3000, "건강 주스", FruitFlavor, Waiting)
 
 	// 차 종류를 정의
 	milk := NewTea(
