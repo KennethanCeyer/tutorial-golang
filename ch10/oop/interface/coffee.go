@@ -58,7 +58,7 @@ func (c *Coffee) Pick() error {
 	if c.State == Waiting {
 		return fmt.Errorf("%s 커피는 아직 준비되지 않았습니다.", c.Name)
 	} else if c.State == MakeDone {
-		return fmt.Errorf("%s 커피는 아직 만들어지지 않았습니다.", c.Name)
+		return fmt.Errorf("%s 커피는 아직 포장되지 않았습니다.", c.Name)
 	} else if c.State == Done {
 		return fmt.Errorf(
 			"%s 커피는 이미 고객에게 서빙되었습니다.", c.Name)

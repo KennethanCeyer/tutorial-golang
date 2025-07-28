@@ -56,7 +56,7 @@ func (j *Juice) Pick() error {
 	if j.State == Waiting {
 		return fmt.Errorf("%s 쥬스는 아직 준비되지 않았습니다.", j.Name)
 	} else if j.State == MakeDone {
-		return fmt.Errorf("%s 쥬스는 아직 만들어지지 않았습니다.", j.Name)
+		return fmt.Errorf("%s 쥬스는 아직 포장되지 않았습니다.", j.Name)
 	} else if j.State == Done {
 		return fmt.Errorf(
 			"%s 쥬스는 이미 고객에게 서빙되었습니다.", j.Name)

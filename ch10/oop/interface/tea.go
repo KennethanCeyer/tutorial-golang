@@ -56,7 +56,7 @@ func (t *Tea) Pick() error {
 	if t.State == Waiting {
 		return fmt.Errorf("%s 차는 아직 준비되지 않았습니다.", t.Name)
 	} else if t.State == MakeDone {
-		return fmt.Errorf("%s 차는 아직 만들어지지 않았습니다.", t.Name)
+		return fmt.Errorf("%s 차는 아직 포장되지 않았습니다.", t.Name)
 	} else if t.State == Done {
 		return fmt.Errorf(
 			"%s 차는 이미 고객에게 서빙되었습니다.", t.Name)
