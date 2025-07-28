@@ -146,14 +146,14 @@ func main() {
 	// 커피 종류를 정의
 	americano := NewCoffee("아메리카노", 3000, "블랜딩 커피", Bitter)
 	latte := NewCoffee("카페라떼", 3500, "블랜딩 커피", Sweet)
-	cafeMocha := NewCoffee("카페모카", 4000, "디저트 커피", Sweet)
+	caffeMocha := NewCoffee("카페모카", 4000, "디저트 커피", Sweet)
 	dripCoffee := NewCoffee("드립커피", 7000, "원두 커피", FruitFlavor)
 	dutchCoffee := NewCoffee("더치커피", 5000, "더치 커피", Bitter)
 
 	// 판매할 제품 수량을 Product 객체로 생성
 	productAmericano := NewProduct(americano, 5)
 	productLatte := NewProduct(latte, 2)
-	productCafeMocha := NewProduct(cafeMocha, 3)
+	productCaffeMocha := NewProduct(caffeMocha, 3)
 	productDripCoffee := NewProduct(dripCoffee, 4)
 	productDutchCoffee := NewProduct(dutchCoffee, 6)
 
@@ -163,7 +163,7 @@ func main() {
 	myStore := NewStore(0, []*Product{
 		productAmericano,
 		productLatte,
-		productCafeMocha,
+		productCaffeMocha,
 		productDripCoffee,
 		productDutchCoffee})
 	fmt.Printf("store: %v\n", myStore)
