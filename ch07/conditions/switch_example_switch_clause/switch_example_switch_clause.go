@@ -12,7 +12,7 @@ func getKoreanWord(engWord string) (korWord string) {
 	case "grape":
 		word = "포도"
 	default:
-		word = "no matched word!"
+		word = "no matching word!"
 	}
 	return word
 }

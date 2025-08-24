@@ -21,7 +21,7 @@ func getTranslatedWord(
 	} else if engWord == "grape" && language == "jp" {
 		return "葡萄"
 	} else {
-		return "no matched word!"
+		return "no matching word!"
 	}
 }
 

@@ -16,7 +16,7 @@ func getTranslatedWord(
 		} else if engWord == "grape" {
 			return "포도"
 		} else {
-			return "no matched word!"
+			return "no matching word!"
 		}
 	} else if language == "jp" {
 		if engWord == "apple" {
@@ -26,10 +26,10 @@ func getTranslatedWord(
 		} else if engWord == "grape" {
 			return "葡萄"
 		} else {
-			return "no matched word!"
+			return "no matching word!"
 		}
 	} else {
-		return "no matched word!"
+		return "no matching word!"
 	}
 }
 

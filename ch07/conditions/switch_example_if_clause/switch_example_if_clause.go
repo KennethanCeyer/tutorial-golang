@@ -11,7 +11,7 @@ func getKoreanWord(engWord string) (korWord string) {
 	} else if engWord == "grape" {
 		word = "포도"
 	} else {
-		word = "no matched word!"
+		word = "no matching word!"
 	}
 	return word
 }
