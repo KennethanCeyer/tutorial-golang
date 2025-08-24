@@ -108,7 +108,7 @@ func (s *Store) GetMoney() int {
 
 // 사용자로부터 구매 상품과 수량을 입력받는 함수
 func HandleChoiceProduct(myStore *Store) (exit bool) {
-	for true {
+	for {
 		var choice string
 
 		fmt.Println(dividerBar)
@@ -204,7 +204,7 @@ func main() {
 	})
 	fmt.Printf("store: %v", myStore)
 
-	for true {
+	for {
 		fmt.Println(dividerBar)
 		fmt.Println("우리 매장을 찾아와주셔서 감사합니다!")
 		fmt.Printf("현재 매장 보유 자금: %d원\n", myStore.GetMoney())
