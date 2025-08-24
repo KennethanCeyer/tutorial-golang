@@ -7,10 +7,10 @@ type ProductItem interface {
 	Package() error
 	Pick() error
 
-	// 멤버 필드를 가져오는 Getter 함수 정의
-	GetName() string
-	GetPrice() int
-	GetCategory() string
-	GetTaste() Taste
-	GetState() State
+	// 멤버 변숫값을 가져오는 게터 함수 정의
+	Name() string
+	Price() int
+	Category() string
+	Taste() Taste
+	State() State
 }

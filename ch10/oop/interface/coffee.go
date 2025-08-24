@@ -3,11 +3,11 @@ package main
 import "fmt"
 
 type Coffee struct {
-	Name     string
-	Price    int
-	Category string
-	Taste    Taste
-	State    State
+	name     string
+	price    int
+	category string
+	taste    Taste
+	state    State
 }
 
 func NewCoffee(
@@ -15,74 +15,68 @@ func NewCoffee(
 	price int,
 	category string,
 	taste Taste,
-	state State) *Coffee {
-	coffee := new(Coffee)
-	coffee.Name = name
-	coffee.Price = price
-	coffee.Category = category
-	coffee.Taste = taste
-
-	// 추가됨
-	coffee.State = state
-	return coffee
+	state State,
+) *Coffee {
+	// State 필드 추가
+	return &Coffee{name: name, price: price, category: category, taste: taste, state: state}
 }
 
 // 커피를 만듦
 func (c *Coffee) Make() error {
-	if c.State == MakeDone {
-		return fmt.Errorf("%s 커피는 이미 만들어져 있습니다.", c.Name)
-	} else if c.State == Done {
+	if c.state == MakeDone {
+		return fmt.Errorf("%s 커피는 이미 만들어져 있습니다.", c.name)
+	} else if c.state == Done {
 		return fmt.Errorf(
-			"%s 커피는 이미 만들어져 고객에게 서빙되었습니다.", c.Name)
+			"%s 커피는 이미 만들어져 고객에게 서빙되었습니다.", c.name)
 	}
-	c.State = MakeDone
+	c.state = MakeDone
 	return nil
 }
 
 // 커피를 포장함
 func (c *Coffee) Package() error {
-	if c.State == Waiting {
-		return fmt.Errorf("%s 커피는 아직 준비되지 않았습니다.", c.Name)
-	} else if c.State == PackageDone {
-		return fmt.Errorf("%s 커피는 이미 포장이 완료되었습니다.", c.Name)
-	} else if c.State == Done {
+	if c.state == Waiting {
+		return fmt.Errorf("%s 커피는 아직 준비되지 않았습니다.", c.name)
+	} else if c.state == PackageDone {
+		return fmt.Errorf("%s 커피는 이미 포장이 완료되었습니다.", c.name)
+	} else if c.state == Done {
 		return fmt.Errorf(
-			"%s 커피는 이미 고객에게 서빙되었습니다.", c.Name)
+			"%s 커피는 이미 고객에게 서빙되었습니다.", c.name)
 	}
-	c.State = PackageDone
+	c.state = PackageDone
 	return nil
 }
 
 // 커피를 서빙함
 func (c *Coffee) Pick() error {
-	if c.State == Waiting {
-		return fmt.Errorf("%s 커피는 아직 준비되지 않았습니다.", c.Name)
-	} else if c.State == MakeDone {
-		return fmt.Errorf("%s 커피는 아직 포장되지 않았습니다.", c.Name)
-	} else if c.State == Done {
+	if c.state == Waiting {
+		return fmt.Errorf("%s 커피는 아직 준비되지 않았습니다.", c.name)
+	} else if c.state == MakeDone {
+		return fmt.Errorf("%s 커피는 아직 포장되지 않았습니다.", c.name)
+	} else if c.state == Done {
 		return fmt.Errorf(
-			"%s 커피는 이미 고객에게 서빙되었습니다.", c.Name)
+			"%s 커피는 이미 고객에게 서빙되었습니다.", c.name)
 	}
-	c.State = Done
+	c.state = Done
 	return nil
 }
 
-func (c *Coffee) GetName() string {
-	return c.Name
+func (c *Coffee) Name() string {
+	return c.name
 }
 
-func (c *Coffee) GetPrice() int {
-	return c.Price
+func (c *Coffee) Price() int {
+	return c.price
 }
 
-func (c *Coffee) GetCategory() string {
-	return c.Category
+func (c *Coffee) Category() string {
+	return c.category
 }
 
-func (c *Coffee) GetTaste() Taste {
-	return c.Taste
+func (c *Coffee) Taste() Taste {
+	return c.taste
 }
 
-func (c *Coffee) GetState() State {
-	return c.State
+func (c *Coffee) State() State {
+	return c.state
 }

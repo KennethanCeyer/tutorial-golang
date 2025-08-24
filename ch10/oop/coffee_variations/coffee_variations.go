@@ -18,17 +18,8 @@ type Coffee struct {
 	Taste    Taste
 }
 
-func NewCoffee(
-	name string,
-	price int,
-	category string,
-	taste Taste) *Coffee {
-	coffee := new(Coffee)
-	coffee.Name = name
-	coffee.Price = price
-	coffee.Category = category
-	coffee.Taste = taste
-	return coffee
+func NewCoffee(name string, price int, category string, taste Taste) *Coffee {
+    return &Coffee{Name: name, Price: price, Category: category, Taste: taste}
 }
 
 func main() {
