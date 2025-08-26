@@ -28,4 +28,5 @@ func main() {
 	fmt.Printf("category: %s\n", coffee.Category)
 	fmt.Printf("taste: %s\n", coffee.Taste)
 	fmt.Println("================================================")
+
 }

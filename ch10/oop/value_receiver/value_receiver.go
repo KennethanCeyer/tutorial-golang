@@ -7,7 +7,10 @@ type Rectangle struct {
 }
 
 func NewRectangle(x int, y int) *Rectangle {
-	return &Rectangle{x: x, y: y}
+	rectangle := new(Rectangle)
+	rectangle.x = x
+	rectangle.y = y
+	return rectangle
 }
 
 func (r Rectangle) Draw(x int, y int) {

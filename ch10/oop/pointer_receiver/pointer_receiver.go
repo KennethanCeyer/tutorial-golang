@@ -7,7 +7,10 @@ type Rectangle struct {
 }
 
 func NewRectangle(x int, y int) *Rectangle {
-	return &Rectangle{x: x, y: y}
+	rectangle := new(Rectangle)
+	rectangle.x = x
+	rectangle.y = y
+	return rectangle
 }
 
 // 이 부분이 변경되었다

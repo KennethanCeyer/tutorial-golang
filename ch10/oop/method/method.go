@@ -18,8 +18,17 @@ type Coffee struct {
 	Taste    Taste
 }
 
-func NewCoffee(name string, price int, category string, taste Taste) *Coffee {
-    return &Coffee{Name: name, Price: price, Category: category, Taste: taste}
+func NewCoffee(
+	name string,
+	price int,
+	category string,
+	taste Taste) *Coffee {
+	coffee := new(Coffee)
+	coffee.Name = name
+	coffee.Price = price
+	coffee.Category = category
+	coffee.Taste = taste
+	return coffee
 }
 
 const dividerBar = "================================================"
@@ -36,12 +45,18 @@ type Store struct {
 
 // Product 객체의 생성자
 func NewProduct(item *Coffee, quantity int) *Product {
-	return &Product{Item: item, Quantity: quantity}
+	product := new(Product)
+	product.Item = item
+	product.Quantity = quantity
+	return product
 }
 
 // Store 객체의 생성자
 func NewStore(money int, products []*Product) *Store {
-	return &Store{Money: money, Products: products}
+	store := new(Store)
+	store.Money = money
+	store.Products = products
+	return store
 }
 
 // 특정 상품을 원하는 수량 만큼 판다
@@ -76,6 +91,11 @@ func (s *Store) CheckProductQuantity(
 	return product.Quantity >= quantity
 }
 
+// 현재 상점의 보유 잔금을 가져온다
+func (s *Store) GetMoney() int {
+	return s.Money
+}
+
 // 사용자로부터 구매 상품과 수량을 입력받는 함수
 func HandleChoiceProduct(myStore *Store) (exit bool) {
 	for {
@@ -88,7 +108,7 @@ func HandleChoiceProduct(myStore *Store) (exit bool) {
 		if choice == "exit" {
 			fmt.Println("이용해주셔서 감사합니다!")
 			fmt.Println(dividerBar)
-			fmt.Printf("최종 가게 보유 자금 %d원\n", myStore.Money)
+			fmt.Printf("최종 가게 보유 자금 %d원\n", myStore.GetMoney())
 			return true
 		}
 
@@ -151,7 +171,7 @@ func main() {
 	for {
 		fmt.Println(dividerBar)
 		fmt.Println("우리 매장을 찾아와주셔서 감사합니다!")
-		fmt.Printf("현재 매장 보유 자금: %d원\n", myStore.Money)
+		fmt.Printf("현재 매장 보유 자금: %d원\n", myStore.GetMoney())
 		fmt.Println(dividerBar)
 		fmt.Println("우리 매장 상품 리스트입니다.")
 		for i, product := range myStore.GetProducts() {
