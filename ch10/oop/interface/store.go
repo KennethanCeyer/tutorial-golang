@@ -75,7 +75,7 @@ func (s *Store) SellProduct(productName string, quantity int) {
 	}
 
 	product.Quantity -= quantity
-	s.Money += product.Item.GetPrice() * quantity
+	s.Money += product.Item.Price() * quantity
 }
 
 // 모든 상품 객체 목록을 가져온다
@@ -86,7 +86,7 @@ func (s *Store) GetProducts() []*Product {
 // 특정 이름의 상품 객체를 가져온다
 func (s *Store) GetProduct(productName string) *Product {
 	for _, product := range s.Products {
-		if product.Item.GetName() == productName {
+		if product.Item.Name() == productName {
 			return product
 		}
 	}
@@ -101,11 +101,6 @@ func (s *Store) CheckProductQuantity(
 	return product.Quantity >= quantity
 }
 
-// 현재 상점의 보유 잔금을 가져온다
-func (s *Store) GetMoney() int {
-	return s.Money
-}
-
 // 사용자로부터 구매 상품과 수량을 입력받는 함수
 func HandleChoiceProduct(myStore *Store) (exit bool) {
 	for {
@@ -118,7 +113,7 @@ func HandleChoiceProduct(myStore *Store) (exit bool) {
 		if choice == "exit" {
 			fmt.Println("이용해주셔서 감사합니다!")
 			fmt.Println(dividerBar)
-			fmt.Printf("최종 가게 보유 자금 %d원\n", myStore.GetMoney())
+			fmt.Printf("최종 가게 보유 자금 %d원\n", myStore.Money)
 			return true
 		}
 
@@ -137,14 +132,14 @@ func HandleChoiceProduct(myStore *Store) (exit bool) {
 		fmt.Scanln(&quantity)
 
 		isExists := myStore.CheckProductQuantity(
-			product.Item.GetName(),
+			product.Item.Name(),
 			quantity)
 		if isExists == false {
 			fmt.Printf("%s의 재고 수량이 떨어졌네요...\n", choice)
 			continue
 		}
 
-		myStore.SellProduct(product.Item.GetName(), quantity)
+		myStore.SellProduct(product.Item.Name(), quantity)
 		fmt.Println("우리 매장을 이용해주셔서 감사합니다!")
 		break
 	}
@@ -207,14 +202,14 @@ func main() {
 	for {
 		fmt.Println(dividerBar)
 		fmt.Println("우리 매장을 찾아와주셔서 감사합니다!")
-		fmt.Printf("현재 매장 보유 자금: %d원\n", myStore.GetMoney())
+		fmt.Printf("현재 매장 보유 자금: %d원\n", myStore.Money)
 		fmt.Println(dividerBar)
 		fmt.Println("우리 매장 상품 리스트입니다.")
 		for i, product := range myStore.GetProducts() {
 			fmt.Printf("%d. %s 상품: %d원, (재고: %d개)\n",
 				i+1,
-				product.Item.GetName(),
-				product.Item.GetPrice(),
+				product.Item.Name(),
+				product.Item.Price(),
 				product.Quantity)
 		}
 

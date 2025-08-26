@@ -8,9 +8,9 @@ type ProductItem interface {
 	Pick() error
 
 	// 멤버 필드를 가져오는 Getter 함수 정의
-	GetName() string
-	GetPrice() int
-	GetCategory() string
-	GetTaste() Taste
-	GetState() State
+	Name() string
+	Price() int
+	Category() string
+	Taste() Taste
+	State() State
 }
